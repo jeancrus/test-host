@@ -31,77 +31,81 @@ function Home() {
     setValue(number);
   }
 
-  const presentPlan = useMemo(() => {
-    return data.map((item) => {
-      if (value === 1)
-        return {
-          ...item,
-          name: item.name,
-          id: item.id,
-          prices: {
-            ...item.cycle.monthly,
-            total: formatPrice(item.cycle.monthly.priceOrder),
-            discount: formatPrice(
-              item.cycle.monthly.priceOrder -
-                (item.cycle.monthly.priceOrder / 100) * 40
-            ),
-            month: Number(
-              item.cycle.monthly.priceOrder -
-                (item.cycle.monthly.priceOrder / 100) * 40
-            ).toFixed(2),
-            economy: formatPrice(
-              item.cycle.monthly.priceOrder -
-                (item.cycle.monthly.priceOrder -
-                  (item.cycle.monthly.priceOrder / 100) * 40)
-            ),
-          },
-        };
-      if (value === 2)
-        return {
-          ...item,
-          name: item.name,
-          id: item.id,
-          prices: {
-            ...item.cycle.annually,
-            total: formatPrice(item.cycle.annually.priceOrder),
-            discount: formatPrice(
-              item.cycle.annually.priceOrder -
-                (item.cycle.annually.priceOrder / 100) * 40
-            ),
-            month: Number(
-              item.cycle.annually.priceOrder / item.cycle.annually.months
-            ).toFixed(2),
-            economy: formatPrice(
-              item.cycle.annually.priceOrder -
-                (item.cycle.annually.priceOrder -
-                  (item.cycle.annually.priceOrder / 100) * 40)
-            ),
-          },
-        };
-      if (value === 3)
-        return {
-          ...item,
-          name: item.name,
-          id: item.id,
-          prices: {
-            ...item.cycle.triennially,
-            total: formatPrice(item.cycle.triennially.priceOrder),
-            discount: formatPrice(
-              item.cycle.triennially.priceOrder -
-                (item.cycle.triennially.priceOrder / 100) * 40
-            ),
-            month: Number(
-              item.cycle.triennially.priceOrder / item.cycle.triennially.months
-            ).toFixed(2),
-            economy: formatPrice(
-              item.cycle.triennially.priceOrder -
-                (item.cycle.triennially.priceOrder -
-                  (item.cycle.triennially.priceOrder / 100) * 40)
-            ),
-          },
-        };
-    });
-  }, [value, data]);
+  const presentPlan = useMemo(
+    () =>
+      data.map((item) => {
+        if (value === 1)
+          return {
+            ...item,
+            name: item.name,
+            id: item.id,
+            prices: {
+              ...item.cycle.monthly,
+              total: formatPrice(item.cycle.monthly.priceOrder),
+              discount: formatPrice(
+                item.cycle.monthly.priceOrder -
+                  (item.cycle.monthly.priceOrder / 100) * 40
+              ),
+              month: Number(
+                item.cycle.monthly.priceOrder -
+                  (item.cycle.monthly.priceOrder / 100) * 40
+              ).toFixed(2),
+              economy: formatPrice(
+                item.cycle.monthly.priceOrder -
+                  (item.cycle.monthly.priceOrder -
+                    (item.cycle.monthly.priceOrder / 100) * 40)
+              ),
+            },
+          };
+        if (value === 2)
+          return {
+            ...item,
+            name: item.name,
+            id: item.id,
+            prices: {
+              ...item.cycle.annually,
+              total: formatPrice(item.cycle.annually.priceOrder),
+              discount: formatPrice(
+                item.cycle.annually.priceOrder -
+                  (item.cycle.annually.priceOrder / 100) * 40
+              ),
+              month: Number(
+                item.cycle.annually.priceOrder / item.cycle.annually.months
+              ).toFixed(2),
+              economy: formatPrice(
+                item.cycle.annually.priceOrder -
+                  (item.cycle.annually.priceOrder -
+                    (item.cycle.annually.priceOrder / 100) * 40)
+              ),
+            },
+          };
+        if (value === 3)
+          return {
+            ...item,
+            name: item.name,
+            id: item.id,
+            prices: {
+              ...item.cycle.triennially,
+              total: formatPrice(item.cycle.triennially.priceOrder),
+              discount: formatPrice(
+                item.cycle.triennially.priceOrder -
+                  (item.cycle.triennially.priceOrder / 100) * 40
+              ),
+              month: Number(
+                item.cycle.triennially.priceOrder /
+                  item.cycle.triennially.months
+              ).toFixed(2),
+              economy: formatPrice(
+                item.cycle.triennially.priceOrder -
+                  (item.cycle.triennially.priceOrder -
+                    (item.cycle.triennially.priceOrder / 100) * 40)
+              ),
+            },
+          };
+        return item;
+      }),
+    [value, data]
+  );
 
   async function postClick(itemValue) {
     const newValue = {
