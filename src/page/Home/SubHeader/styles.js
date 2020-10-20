@@ -101,4 +101,52 @@ export const SubHeaderContainer = styled.div`
   .right-image {
     left: 5%;
   }
+
+  @media (max-width: 1024px) {
+    .right-image,
+    .left-image {
+      display: none;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .box-blue {
+      .text-box {
+        b,
+        span {
+          font-size: 16px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+
+        .select-icon {
+          margin-top: 86px;
+        }
+      }
+    }
+  }
+  @media (max-width: 321px) {
+    .box-blue {
+      height: 335px;
+      .text-box {
+        p {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          span {
+            max-width: 220px;
+            font-size: 14px;
+            text-align: center;
+            margin-right: 0 !important;
+          }
+        }
+        .select-icon {
+          margin-top: 55px;
+        }
+      }
+    }
+  }
 `;

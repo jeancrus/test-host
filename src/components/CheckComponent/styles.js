@@ -18,7 +18,7 @@ export const CheckBox = styled.div`
   border-radius: 21px;
   font-size: 16px;
   color: #4480c5;
-  width: 108px;
+  width: 100px;
   cursor: pointer;
   ${({ check }) =>
     check &&
