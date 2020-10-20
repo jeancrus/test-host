@@ -1,12 +1,30 @@
 import produce from 'immer';
 
-export default function cart(state = [], action) {
-  switch (action.type) {
-    case '@App/MY_FUNC_REQUEST':
-      return produce(state, (draft) => {});
-    case '@App/MY_FUNC_SUCCESS':
-      return produce(state, (draft) => {});
-    default:
-      return state;
-  }
+const INITIAL_STATE = {
+  loading: false,
+  values: [],
+};
+
+export default function cart(state = INITIAL_STATE, action) {
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case '@app/GET_PAYMENT_VALUE_REQUEST': {
+        draft.loading = true;
+        break;
+      }
+      case '@app/GET_PAYMENT_VALUE_SUCCESS': {
+        draft.loading = false;
+        draft.values = action?.payload?.data;
+
+        break;
+      }
+
+      case '@app/FINISH_LOADING':
+        draft.loading = false;
+        break;
+
+      default:
+        return state;
+    }
+  });
 }

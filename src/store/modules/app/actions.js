@@ -1,12 +1,19 @@
-export function myFuncRequest(id) {
+export function getPaymentRequest(id) {
   return {
-    type: '@app/MY_FUNC_REQUEST',
+    type: '@app/GET_PAYMENT_VALUE_REQUEST',
     id,
   };
 }
-export function myFuncSuccess(id) {
+export function getPaymentSuccess(data) {
   return {
-    type: '@app/MY_FUNC_SUCCESS',
-    id,
+    type: '@app/GET_PAYMENT_VALUE_SUCCESS',
+
+    payload: { data },
+  };
+}
+
+export function finishLoading() {
+  return {
+    type: '@app/FINISH_LOADING',
   };
 }

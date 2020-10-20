@@ -1,20 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-CRA template with Eslint airbnb, react functional pattern, redux, redux-saga, reactotron.
+To start this project, you will need to install nodejs: https://nodejs.org/en/download/
 
-Instructions for a better development:
+Check if node is on your system using your terminal (cmd) with the command: node --version.
 
-Reactotron debugger download:
-https://github.com/infinitered/reactotron/releases/tag/v3.0.0-beta.9
+If you see a message like: v12.19.0, you can proceed to next step, otherwise, you will have to reinstall node on your pc.
 
-docs:
-https://github.com/infinitered/reactotron
+Next step is to access test-host folder and in your terminal (cmd), use the command: npm i.
 
-css:
-https://styled-components.com/
-
-redux with redux-saga:
-https://redux-saga.js.org/
-
-hotel:
-https://www.npmjs.com/package/hotel
+Wait for the instalation and then, do the command npm start and wait for the server start.

@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #fff;
+    background: #F1F6FB;
     color: #9F9F9F;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased !important;
