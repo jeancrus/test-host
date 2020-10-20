@@ -6,6 +6,6 @@ Check if node is on your system using your terminal (cmd) with the command: node
 
 If you see a message like: v12.19.0, you can proceed to next step, otherwise, you will have to reinstall node on your pc.
 
-Next step is to access test-host folder and in your terminal (cmd), use the command: npm i.
+Next step is to access test-host folder and in your terminal (cmd), you have to be on the same folder of package.json and use the command: npm i.
 
 Wait for the instalation and then, do the command npm start and wait for the server start.
