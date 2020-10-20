@@ -126,16 +126,21 @@ export const SubHeaderContainer = styled.div`
       }
     }
   }
-  @media (max-width: 321px) {
+  @media (max-width: 545px) {
     .box-blue {
       height: 335px;
       .text-box {
+        h1 {
+          margin-top: 30px;
+          font-size: 24px;
+        }
         p {
           display: flex;
           flex-direction: column;
           flex-wrap: wrap;
           justify-content: center;
           align-items: center;
+
           span {
             max-width: 220px;
             font-size: 14px;
@@ -145,6 +150,15 @@ export const SubHeaderContainer = styled.div`
         }
         .select-icon {
           margin-top: 55px;
+        }
+      }
+    }
+  }
+  @media (max-width: 360px) {
+    .box-blue {
+      .text-box {
+        .select-icon {
+          margin-top: 30px;
         }
       }
     }

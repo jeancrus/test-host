@@ -18,7 +18,7 @@ export const CheckBox = styled.div`
   border-radius: 21px;
   font-size: 16px;
   color: #4480c5;
-  width: 100px;
+  width: 108px;
   cursor: pointer;
   ${({ check }) =>
     check &&
@@ -32,5 +32,13 @@ export const CheckBox = styled.div`
 
   img {
     margin-right: 5px;
+  }
+
+  @media (max-width: 321px) {
+    width: 98px;
+    padding: 5px 8px;
+    span {
+      font-size: 14px;
+    }
   }
 `;
